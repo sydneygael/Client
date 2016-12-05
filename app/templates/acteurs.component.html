@@ -1,0 +1,33 @@
+<div class="container">
+
+<div class="col-lg-12">
+                       <br>
+					   <br>
+					   <br>
+					   <br>
+					   <br>
+					   <br>
+						<table class="table">
+						
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Date Naissance</th>
+            <th>Date Décès</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let acteur of acteurs">
+            <td>{{acteur.nomAct}}</td>
+            <td>{{acteur.prenAct}}</td>
+            <td>{{acteur.dateNaiss}}</td>
+            <td>{{acteur.dateDeces}}</td>
+        </tr>
+		
+    </tbody>
+</table>
+						
+</div>
+<p style="color:red">{{errorMessage}}</p>
+
