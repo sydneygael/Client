@@ -11,6 +11,7 @@ import { ActeurFormComponent } from '../components/acteurform.component';
 export class ActeursComponent  implements OnInit {
     acteurs: Acteur[];
 	errorMessage: string;
+    childTitle:string = 'This text is passed to child';
 
     constructor(private acteurService: ActeurService) { }
 

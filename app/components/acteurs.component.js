@@ -13,6 +13,7 @@ var acteur_service_1 = require("../services/acteur.service");
 var ActeursComponent = (function () {
     function ActeursComponent(acteurService) {
         this.acteurService = acteurService;
+        this.childTitle = 'This text is passed to child';
     }
     ActeursComponent.prototype.loadActeurs = function () {
         var _this = this;
