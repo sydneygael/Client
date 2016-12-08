@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var realisateur_service_1 = require('../services/realisateur.service');
+var core_1 = require("@angular/core");
+var realisateur_service_1 = require("../services/realisateur.service");
 var RealisateursComponent = (function () {
     function RealisateursComponent(realisateurService) {
         this.realisateurService = realisateurService;
@@ -22,14 +22,14 @@ var RealisateursComponent = (function () {
     RealisateursComponent.prototype.ngOnInit = function () {
         this.getRealisateurs();
     };
-    RealisateursComponent = __decorate([
-        core_1.Component({
-            selector: 'realisateurs',
-            templateUrl: 'app/templates/realisateurs.component.html'
-        }), 
-        __metadata('design:paramtypes', [realisateur_service_1.RealisateurService])
-    ], RealisateursComponent);
     return RealisateursComponent;
 }());
+RealisateursComponent = __decorate([
+    core_1.Component({
+        selector: 'realisateurs',
+        templateUrl: 'app/templates/realisateurs.component.html'
+    }),
+    __metadata("design:paramtypes", [realisateur_service_1.RealisateurService])
+], RealisateursComponent);
 exports.RealisateursComponent = RealisateursComponent;
 //# sourceMappingURL=realisateurs.component.js.map

@@ -13,23 +13,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-var main_service_1 = require('./main.service');
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+var main_service_1 = require("./main.service");
 var RealisateurService = (function (_super) {
     __extends(RealisateurService, _super);
     function RealisateurService(http) {
-        _super.call(this, http);
-        this.baseUrl = this.baseUrl + "realisateurs";
+        var _this = _super.call(this, http) || this;
+        _this.baseUrl = _this.baseUrl + "realisateurs";
+        return _this;
     }
     RealisateurService.prototype.getRealisateurs = function () {
         return this.http.get(this.baseUrl).map(function (response) { return response.json().realisateur; });
     };
-    RealisateurService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], RealisateurService);
     return RealisateurService;
 }(main_service_1.MainService));
+RealisateurService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], RealisateurService);
 exports.RealisateurService = RealisateurService;
 //# sourceMappingURL=realisateur.service.js.map

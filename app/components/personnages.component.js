@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var personnage_service_1 = require('../services/personnage.service');
+var core_1 = require("@angular/core");
+var personnage_service_1 = require("../services/personnage.service");
 var PersonnagesComponent = (function () {
     function PersonnagesComponent(personnageService) {
         this.personnageService = personnageService;
@@ -22,14 +22,14 @@ var PersonnagesComponent = (function () {
     PersonnagesComponent.prototype.ngOnInit = function () {
         this.getPersonnages();
     };
-    PersonnagesComponent = __decorate([
-        core_1.Component({
-            selector: 'personnages',
-            templateUrl: 'app/templates/personnages.component.html'
-        }), 
-        __metadata('design:paramtypes', [personnage_service_1.PersonnageService])
-    ], PersonnagesComponent);
     return PersonnagesComponent;
 }());
+PersonnagesComponent = __decorate([
+    core_1.Component({
+        selector: 'personnages',
+        templateUrl: 'app/templates/personnages.component.html'
+    }),
+    __metadata("design:paramtypes", [personnage_service_1.PersonnageService])
+], PersonnagesComponent);
 exports.PersonnagesComponent = PersonnagesComponent;
 //# sourceMappingURL=personnages.component.js.map

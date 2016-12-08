@@ -1,33 +1,65 @@
 <div class="container">
 
-<div class="col-lg-12">
-                       <br>
-					   <br>
-					   <br>
-					   <br>
-					   <br>
-					   <br>
-						<table class="table">
-						
-    <thead>
-        <tr>
-            <th>Nom</th>
-            <th>Prénom</th>
-            <th>Date Naissance</th>
-            <th>Date Décès</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let acteur of acteurs">
-            <td>{{acteur.nomAct}}</td>
-            <td>{{acteur.prenAct}}</td>
-            <td>{{acteur.dateNaiss}}</td>
-            <td>{{acteur.dateDeces}}</td>
-        </tr>
-		
-    </tbody>
-</table>
-						
-</div>
-<p style="color:red">{{errorMessage}}</p>
 
+    <div class="col-lg-12">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <table class="table">
+
+            <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Date Naissance</th>
+                <th>Date Décès</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let acteur of acteurs">
+                <td>{{acteur.nomAct}}</td>
+                <td>{{acteur.prenAct}}</td>
+                <td>{{acteur.dateNaiss}}</td>
+                <td>{{acteur.dateDeces}}</td>
+                <td><button
+                        class="action glyphicon glyphicon-pencil btn btn-primary"
+                        data-toggle="modal" data-id="${acteur.noAct}"
+                        data-target="#editionModal"
+                ></button></td>
+
+
+                <td><button
+                        class="action glyphicon glyphicon-trash btn btn-danger"
+                ></button></td>
+            </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+    <p style="color:red">{{errorMessage}}</p>
+    <!-- Modal for edition -->
+    <div id="editionModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">MISE A JOUR ACTEUR</h4>
+                </div>
+                <div class="modal-body">
+
+
+                    <label> id Acteur </label>
+                    <acteurform [prenAct]="ok"> </acteurform>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>

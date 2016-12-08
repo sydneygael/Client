@@ -13,23 +13,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-var main_service_1 = require('./main.service');
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+var main_service_1 = require("./main.service");
 var FilmService = (function (_super) {
     __extends(FilmService, _super);
     function FilmService(http) {
-        _super.call(this, http);
-        this.baseUrl = this.baseUrl + "films";
+        var _this = _super.call(this, http) || this;
+        _this.baseUrl = _this.baseUrl + "films";
+        return _this;
     }
     FilmService.prototype.getFilms = function () {
         return this.http.get(this.baseUrl).map(function (response) { return response.json().film; });
     };
-    FilmService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], FilmService);
     return FilmService;
 }(main_service_1.MainService));
+FilmService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], FilmService);
 exports.FilmService = FilmService;
 //# sourceMappingURL=film.service.js.map

@@ -11,6 +11,7 @@ import { CategoriesComponent } from './components/categories.component';
 import { FilmsComponent } from './components/films.component';
 import { PersonnagesComponent } from './components/personnages.component';
 import { RealisateursComponent } from './components/realisateurs.component';
+import { ActeurFormComponent } from './components/acteurform.component';
 
 
 import { MainService } from './services/main.service';
@@ -46,7 +47,8 @@ const appRoutes: Routes = [
     CategoriesComponent,
     FilmsComponent,
     PersonnagesComponent,
-    RealisateursComponent
+    RealisateursComponent,
+    ActeurFormComponent
   ],
   providers: [
     MainService,
@@ -56,7 +58,7 @@ const appRoutes: Routes = [
     PersonnageService,
     RealisateurService
   ],
-  bootstrap: [AppComponent,ActeursComponent]
+  bootstrap: [AppComponent]
 })
 
 export class AppModule { }

@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-require('rxjs/add/operator/map');
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
+require("rxjs/add/operator/map");
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
 var MainService = (function () {
     function MainService(http) {
         this.http = http;
@@ -18,11 +18,11 @@ var MainService = (function () {
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         this.options = new http_1.RequestOptions({ headers: this.headers });
     }
-    MainService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], MainService);
     return MainService;
 }());
+MainService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], MainService);
 exports.MainService = MainService;
 //# sourceMappingURL=main.service.js.map

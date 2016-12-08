@@ -13,23 +13,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-var main_service_1 = require('./main.service');
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+var main_service_1 = require("./main.service");
 var PersonnageService = (function (_super) {
     __extends(PersonnageService, _super);
     function PersonnageService(http) {
-        _super.call(this, http);
-        this.baseUrl = this.baseUrl + "personnages";
+        var _this = _super.call(this, http) || this;
+        _this.baseUrl = _this.baseUrl + "personnages";
+        return _this;
     }
     PersonnageService.prototype.getPersonnages = function () {
         return this.http.get(this.baseUrl).map(function (response) { return response.json().personnage; });
     };
-    PersonnageService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], PersonnageService);
     return PersonnageService;
 }(main_service_1.MainService));
+PersonnageService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], PersonnageService);
 exports.PersonnageService = PersonnageService;
 //# sourceMappingURL=personnage.service.js.map

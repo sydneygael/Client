@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var categorie_service_1 = require('../services/categorie.service');
+var core_1 = require("@angular/core");
+var categorie_service_1 = require("../services/categorie.service");
 var CategoriesComponent = (function () {
     function CategoriesComponent(categorieService) {
         this.categorieService = categorieService;
@@ -22,14 +22,14 @@ var CategoriesComponent = (function () {
     CategoriesComponent.prototype.ngOnInit = function () {
         this.getCategories();
     };
-    CategoriesComponent = __decorate([
-        core_1.Component({
-            selector: 'categories',
-            templateUrl: 'app/templates/categories.component.html'
-        }), 
-        __metadata('design:paramtypes', [categorie_service_1.CategorieService])
-    ], CategoriesComponent);
     return CategoriesComponent;
 }());
+CategoriesComponent = __decorate([
+    core_1.Component({
+        selector: 'categories',
+        templateUrl: 'app/templates/categories.component.html'
+    }),
+    __metadata("design:paramtypes", [categorie_service_1.CategorieService])
+], CategoriesComponent);
 exports.CategoriesComponent = CategoriesComponent;
 //# sourceMappingURL=categories.component.js.map

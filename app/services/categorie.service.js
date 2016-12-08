@@ -13,23 +13,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-var main_service_1 = require('./main.service');
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+var main_service_1 = require("./main.service");
 var CategorieService = (function (_super) {
     __extends(CategorieService, _super);
     function CategorieService(http) {
-        _super.call(this, http);
-        this.baseUrl = this.baseUrl + "categories";
+        var _this = _super.call(this, http) || this;
+        _this.baseUrl = _this.baseUrl + "categories";
+        return _this;
     }
     CategorieService.prototype.getCategories = function () {
         return this.http.get(this.baseUrl).map(function (response) { return response.json().categorie; });
     };
-    CategorieService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], CategorieService);
     return CategorieService;
 }(main_service_1.MainService));
+CategorieService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], CategorieService);
 exports.CategorieService = CategorieService;
 //# sourceMappingURL=categorie.service.js.map

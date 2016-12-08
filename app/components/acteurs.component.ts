@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { Acteur } from '../model/acteur';
 import { ActeurService } from '../services/acteur.service';
-
+import { ActeurFormComponent } from '../components/acteurform.component';
 @Component({
     selector: 'acteurs',
     templateUrl: 'app/templates/acteurs.component.html',
-	 providers: [ActeurService]
+	 providers: [ActeurService],
 })
 export class ActeursComponent  implements OnInit {
     acteurs: Acteur[];

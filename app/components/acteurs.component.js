@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var acteur_service_1 = require('../services/acteur.service');
+var core_1 = require("@angular/core");
+var acteur_service_1 = require("../services/acteur.service");
 var ActeursComponent = (function () {
     function ActeursComponent(acteurService) {
         this.acteurService = acteurService;
@@ -22,15 +22,15 @@ var ActeursComponent = (function () {
     ActeursComponent.prototype.ngOnInit = function () {
         this.loadActeurs();
     };
-    ActeursComponent = __decorate([
-        core_1.Component({
-            selector: 'acteurs',
-            templateUrl: 'app/templates/acteurs.component.html',
-            providers: [acteur_service_1.ActeurService]
-        }), 
-        __metadata('design:paramtypes', [acteur_service_1.ActeurService])
-    ], ActeursComponent);
     return ActeursComponent;
 }());
+ActeursComponent = __decorate([
+    core_1.Component({
+        selector: 'acteurs',
+        templateUrl: 'app/templates/acteurs.component.html',
+        providers: [acteur_service_1.ActeurService],
+    }),
+    __metadata("design:paramtypes", [acteur_service_1.ActeurService])
+], ActeursComponent);
 exports.ActeursComponent = ActeursComponent;
 //# sourceMappingURL=acteurs.component.js.map
