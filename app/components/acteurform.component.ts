@@ -1,4 +1,5 @@
 import {Component, Input} from "@angular/core";
+import { Acteur } from '../model/acteur';
 
 @Component({
     selector: 'acteurform',
@@ -7,9 +8,6 @@ import {Component, Input} from "@angular/core";
 
 export class ActeurFormComponent {
 
-    @Input() public noAct: number;
-    @Input() public nomAct: string;
-    @Input() public prenAct: string;
-    @Input() public dateNaiss: Date;
-    @Input() public dateDeces: Date;
+    //@Input acteur : string;
+
 }

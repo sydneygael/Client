@@ -27,6 +27,7 @@ var categorie_service_1 = require("./services/categorie.service");
 var film_service_1 = require("./services/film.service");
 var personnage_service_1 = require("./services/personnage.service");
 var realisateur_service_1 = require("./services/realisateur.service");
+var emitter_service_1 = require("./services/emitter.service");
 var appRoutes = [
     { path: 'index', component: index_component_1.IndexComponent },
     { path: '', component: index_component_1.IndexComponent },
@@ -67,7 +68,8 @@ AppModule = __decorate([
             categorie_service_1.CategorieService,
             film_service_1.FilmService,
             personnage_service_1.PersonnageService,
-            realisateur_service_1.RealisateurService
+            realisateur_service_1.RealisateurService,
+            emitter_service_1.EmitterService
         ],
         bootstrap: [app_component_1.AppComponent]
     }),

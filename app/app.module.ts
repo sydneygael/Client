@@ -20,6 +20,7 @@ import { CategorieService } from './services/categorie.service';
 import { FilmService } from './services/film.service';
 import { PersonnageService } from './services/personnage.service';
 import { RealisateurService } from './services/realisateur.service';
+import { EmitterService } from './services/emitter.service';
 
 const appRoutes: Routes = [
             { path: 'index',component: IndexComponent },
@@ -56,7 +57,8 @@ const appRoutes: Routes = [
     CategorieService,
     FilmService,
     PersonnageService,
-    RealisateurService
+    RealisateurService,
+    EmitterService
   ],
   bootstrap: [AppComponent]
 })

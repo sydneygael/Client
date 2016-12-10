@@ -13,12 +13,14 @@ var acteur_service_1 = require("../services/acteur.service");
 var ActeursComponent = (function () {
     function ActeursComponent(acteurService) {
         this.acteurService = acteurService;
-        this.childTitle = 'This text is passed to child';
     }
     ActeursComponent.prototype.loadActeurs = function () {
         var _this = this;
         this.acteurService.getActeurs()
             .subscribe(function (data) { return _this.acteurs = data; }, function (error) { return _this.errorMessage = error.status + " est le statuts d'error"; });
+    };
+    ActeursComponent.prototype.editActor = function (acteur) {
+        this.acteurSelect = acteur;
     };
     ActeursComponent.prototype.ngOnInit = function () {
         this.loadActeurs();
@@ -29,7 +31,7 @@ ActeursComponent = __decorate([
     core_1.Component({
         selector: 'acteurs',
         templateUrl: 'app/templates/acteurs.component.html',
-        providers: [acteur_service_1.ActeurService],
+        providers: [acteur_service_1.ActeurService]
     }),
     __metadata("design:paramtypes", [acteur_service_1.ActeurService])
 ], ActeursComponent);

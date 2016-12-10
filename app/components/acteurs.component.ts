@@ -1,17 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { Acteur } from '../model/acteur';
 import { ActeurService } from '../services/acteur.service';
 import { ActeurFormComponent } from '../components/acteurform.component';
+
 @Component({
     selector: 'acteurs',
     templateUrl: 'app/templates/acteurs.component.html',
-	 providers: [ActeurService],
+	 providers: [ActeurService]
 })
 export class ActeursComponent  implements OnInit {
     acteurs: Acteur[];
 	errorMessage: string;
-    childTitle:string = 'This text is passed to child';
+    acteurSelect:Acteur ;
 
     constructor(private acteurService: ActeurService) { }
 
@@ -21,6 +22,10 @@ export class ActeursComponent  implements OnInit {
 						data => this.acteurs = data,
 						error => this.errorMessage = error.status + " est le statuts d'error"
 			);
+    }
+
+    editActor(acteur:Acteur){ // to emit
+        this.acteurSelect=acteur;
     }
 	
 	ngOnInit(): void{

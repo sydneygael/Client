@@ -26,10 +26,8 @@
                 <td>{{acteur.dateDeces}}</td>
                 <td><button
                         class="action glyphicon glyphicon-pencil btn btn-primary"
-                        data-toggle="modal" data-id="${acteur.noAct}"
-                        data-target="#editionModal"
+                        data-toggle="modal" data-target="#editionModal" (click)="editActor(acteur)"
                 ></button></td>
-
 
                 <td><button
                         class="action glyphicon glyphicon-trash btn btn-danger"
@@ -55,11 +53,12 @@
                 <div class="modal-body">
 
 
-                    <label> id Acteur </label>
-                    <acteurform [prenAct]='childTitle'> </acteurform>
+                    <label *ngIf="acteurSelect">{{acteurSelect.nomAct}}</label>
+
+                    <acteurform > </acteurform>
                 </div>
             </div>
         </div>
     </div>
 
-    </div>
+</div>
