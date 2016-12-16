@@ -8,6 +8,12 @@ import { Acteur } from '../model/acteur';
 
 export class ActeurFormComponent {
 
-    //@Input acteur : string;
+    private _acteur :Acteur;
+
+    @Input() set acteur(acteur :Acteur){
+        this._acteur=acteur;
+    }
+
+    get acteur(): Acteur {return this._acteur;}
 
 }

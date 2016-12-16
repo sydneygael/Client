@@ -55,7 +55,7 @@
 
                     <label *ngIf="acteurSelect">{{acteurSelect.nomAct}}</label>
 
-                    <acteurform > </acteurform>
+                    <acteurform *ngIf="acteurSelect" [acteur]="acteurSelect"> </acteurform>
                 </div>
             </div>
         </div>
