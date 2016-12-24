@@ -25,6 +25,14 @@ var ActeursComponent = (function () {
     ActeursComponent.prototype.ngOnInit = function () {
         this.loadActeurs();
     };
+    ActeursComponent.prototype.deleteSelectedActor = function () {
+        var _this = this;
+        this.acteurService.deleteActeur(this.acteurSelect.noAct)
+            .subscribe(function (acteurSelect) {
+            // toastr.success("l'acteur " + acteurSelect.nomAct + " supprimé");
+            _this.loadActeurs();
+        });
+    };
     return ActeursComponent;
 }());
 ActeursComponent = __decorate([

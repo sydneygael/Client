@@ -1,5 +1,7 @@
-import {Component, Input} from "@angular/core";
+import {Component} from "@angular/core";
 import { Acteur } from '../model/acteur';
+import { Location } from '@angular/common';
+import {ActeurService} from "../services/acteur.service";
 
 @Component({
     selector: 'acteurform',
@@ -7,13 +9,23 @@ import { Acteur } from '../model/acteur';
 })
 
 export class ActeurFormComponent {
+    private acteur : Acteur;
 
-    private _acteur :Acteur;
+    constructor(
+        private acteurService: ActeurService,
+        private location: Location
+    ) {this.acteur = new Acteur(); }
 
-    @Input() set acteur(acteur :Acteur){
-        this._acteur=acteur;
+    onSubmit(): void {
+        this.acteur.noAct = Math.floor(Math.random() * 1000) + Math.floor(Math.random() * 1000);
+        this.acteurService.addActeur(this.acteur)
+            .subscribe(acteur => {
+               // toastr.success("Acteur ajouté");
+                this.location.back();
+            });
     }
 
-    get acteur(): Acteur {return this._acteur;}
-
+    goBack(): void {
+        this.location.back();
+    }
 }

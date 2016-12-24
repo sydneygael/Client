@@ -2,7 +2,6 @@ import {Component, OnInit, Input} from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { Acteur } from '../model/acteur';
 import { ActeurService } from '../services/acteur.service';
-import { ActeurFormComponent } from '../components/acteurform.component';
 
 @Component({
     selector: 'acteurs',
@@ -30,5 +29,14 @@ export class ActeursComponent  implements OnInit {
 	
 	ngOnInit(): void{
             this.loadActeurs();
+    }
+
+    deleteSelectedActor(): void {
+        this.acteurService.deleteActeur(this.acteurSelect.noAct)
+            .subscribe(
+                acteurSelect => {
+                   // toastr.success("l'acteur " + acteurSelect.nomAct + " supprimé");
+                    this.loadActeurs();
+                });
     }
 }

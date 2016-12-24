@@ -5,7 +5,7 @@ import { Personnage } from '../model/personnage';
 import { MainService } from './main.service';
 
 @Injectable()
-export class PersonnageService extends MainService<Personnage> {
+export class PersonnageService extends MainService {
 
     constructor(http: Http) {
         super(http);

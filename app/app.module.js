@@ -28,13 +28,16 @@ var film_service_1 = require("./services/film.service");
 var personnage_service_1 = require("./services/personnage.service");
 var realisateur_service_1 = require("./services/realisateur.service");
 var emitter_service_1 = require("./services/emitter.service");
+var acteuradd_component_1 = require("./components/acteuradd.component");
 var appRoutes = [
     { path: 'index', component: index_component_1.IndexComponent },
     { path: '', component: index_component_1.IndexComponent },
     { path: 'acteurs', component: acteurs_component_1.ActeursComponent },
+    { path: 'acteurs/add', component: acteuradd_component_1.ActeurAddComponent },
+    //{ path: 'acteurs/see/:id', component: ActeurViewComponent },
     { path: 'films', component: films_component_1.FilmsComponent },
     { path: 'personnages', component: personnages_component_1.PersonnagesComponent },
-    { path: 'categories', component: categories_component_1.CategoriesComponent },
+    { path: 'categories', component: acteurs_component_1.ActeursComponent },
     { path: 'realisateurs', component: realisateurs_component_1.RealisateursComponent }
 ];
 var AppModule = (function () {
@@ -60,7 +63,8 @@ AppModule = __decorate([
             films_component_1.FilmsComponent,
             personnages_component_1.PersonnagesComponent,
             realisateurs_component_1.RealisateursComponent,
-            acteurform_component_1.ActeurFormComponent
+            acteurform_component_1.ActeurFormComponent,
+            acteuradd_component_1.ActeurAddComponent
         ],
         providers: [
             main_service_1.MainService,

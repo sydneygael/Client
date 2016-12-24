@@ -26,6 +26,24 @@ var ActeurService = (function (_super) {
     ActeurService.prototype.getActeurs = function () {
         return this.http.get(this.baseUrl).map(function (response) { return response.json(); });
     };
+    ActeurService.prototype.getActeur = function (id) {
+        var url = this.baseUrl + "/get/" + id;
+        return this.http.get(url).map(function (response) { return response.json(); });
+    };
+    ActeurService.prototype.updateActeur = function (acteur) {
+        var url = this.baseUrl + "acteur/update/";
+        var body = JSON.stringify(acteur);
+        return this.http.post(url, body, this.options).map(function (response) { return response.json(); });
+    };
+    ActeurService.prototype.addActeur = function (acteur) {
+        var url = this.baseUrl + "acteur/add/";
+        var body = JSON.stringify(acteur);
+        return this.http.post(url, body, this.options).map(function (response) { return response.json(); });
+    };
+    ActeurService.prototype.deleteActeur = function (id) {
+        var url = this.baseUrl + "acteur/delete/" + id;
+        return this.http.get(url).map(function (response) { return response.json(); });
+    };
     return ActeurService;
 }(main_service_1.MainService));
 ActeurService = __decorate([
