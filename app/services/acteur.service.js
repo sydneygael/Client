@@ -26,7 +26,7 @@ var ActeurService = (function (_super) {
         return this.http.get(url).map(function (response) { return response.json(); });
     };
     ActeurService.prototype.getActeur = function (id) {
-        var url = this.baseUrl + "/get/" + id;
+        var url = this.baseUrl + "acteur/getbyid?noAct=" + id;
         return this.http.get(url).map(function (response) { return response.json(); });
     };
     ActeurService.prototype.updateActeur = function (acteur) {
@@ -40,7 +40,7 @@ var ActeurService = (function (_super) {
         return this.http.post(url, body, this.options).map(function (response) { return response.json(); });
     };
     ActeurService.prototype.deleteActeur = function (id) {
-        var url = this.baseUrl + "acteur/delete/" + id;
+        var url = this.baseUrl + "acteur/delete?noAct=" + id;
         return this.http.get(url).map(function (response) { return response.json(); });
     };
     return ActeurService;

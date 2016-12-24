@@ -9,10 +9,32 @@ export class CategorieService extends MainService {
 
     constructor(http: Http) {
         super(http);
-        this.baseUrl = this.baseUrl + "categories";
     }
 
     getCategories(): Observable<Categorie[]> {
-        return this.http.get(this.baseUrl).map(response => <Categorie[]> response.json().categorie);
+        var url = this.baseUrl + "categorie/getall";
+        return this.http.get(url).map(response => <Categorie[]> response.json().categorie);
+    }
+
+    getCategorie(id: number): Observable<Categorie> {
+        var url = this.baseUrl + "categorie/getbyid?noCat=" + id;
+        return this.http.get(url).map(response => <Categorie> response.json());
+    }
+
+    updateActeur(categorie: Categorie): Observable<Categorie> {
+        var url = this.baseUrl + "categorie/update/";
+        var body = JSON.stringify(categorie);
+        return this.http.post(url, body, this.options).map(response => <Categorie> response.json());
+    }
+
+    addACatgorie(categorie: Categorie): Observable<Categorie> {
+        var url = this.baseUrl + "categorie/save/";
+        var body = JSON.stringify(categorie);
+        return this.http.post(url, body, this.options).map(response => <Categorie> response.json());
+    }
+
+    deleteCategorie(id: number): Observable<Acteur> {
+        var url = this.baseUrl + "categorie/delete?noCat=" + id;
+        return this.http.get(url).map(response => <Acteur> response.json());
     }
 }

@@ -20,11 +20,30 @@ var FilmService = (function (_super) {
     __extends(FilmService, _super);
     function FilmService(http) {
         var _this = _super.call(this, http) || this;
-        _this.baseUrl = _this.baseUrl + "films";
+        _this.baseUrl = _this.baseUrl;
         return _this;
     }
     FilmService.prototype.getFilms = function () {
-        return this.http.get(this.baseUrl).map(function (response) { return response.json().film; });
+        var url = this.baseUrl + "film/getall";
+        return this.http.get(url).map(function (response) { return response.json().film; });
+    };
+    FilmService.prototype.getFilm = function (id) {
+        var url = this.baseUrl + "film/getbyid?noFilm=" + id;
+        return this.http.get(url).map(function (response) { return response.json(); });
+    };
+    FilmService.prototype.updateFilm = function (film) {
+        var url = this.baseUrl + "film/update/";
+        var body = JSON.stringify(film);
+        return this.http.post(url, body, this.options).map(function (response) { return response.json(); });
+    };
+    FilmService.prototype.addFilm = function (film) {
+        var url = this.baseUrl + "film/save/";
+        var body = JSON.stringify(film);
+        return this.http.post(url, body, this.options).map(function (response) { return response.json(); });
+    };
+    FilmService.prototype.deleteFilm = function (id) {
+        var url = this.baseUrl + "film/delete?noFilm=" + id;
+        return this.http.get(url).map(function (response) { return response.json(); });
     };
     return FilmService;
 }(main_service_1.MainService));

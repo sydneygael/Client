@@ -14,13 +14,13 @@ var FilmsComponent = (function () {
     function FilmsComponent(filmService) {
         this.filmService = filmService;
     }
-    FilmsComponent.prototype.getFilms = function () {
+    FilmsComponent.prototype.loadFilms = function () {
         var _this = this;
         this.filmService.getFilms()
-            .subscribe(function (films) { return _this.films = films; });
+            .subscribe(function (data) { return _this.films = data; });
     };
     FilmsComponent.prototype.ngOnInit = function () {
-        this.getFilms();
+        this.loadFilms();
     };
     return FilmsComponent;
 }());

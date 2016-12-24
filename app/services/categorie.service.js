@@ -19,12 +19,29 @@ var main_service_1 = require("./main.service");
 var CategorieService = (function (_super) {
     __extends(CategorieService, _super);
     function CategorieService(http) {
-        var _this = _super.call(this, http) || this;
-        _this.baseUrl = _this.baseUrl + "categories";
-        return _this;
+        return _super.call(this, http) || this;
     }
     CategorieService.prototype.getCategories = function () {
-        return this.http.get(this.baseUrl).map(function (response) { return response.json().categorie; });
+        var url = this.baseUrl + "categorie/getall";
+        return this.http.get(url).map(function (response) { return response.json().categorie; });
+    };
+    CategorieService.prototype.getCategorie = function (id) {
+        var url = this.baseUrl + "categorie/getbyid?noCat=" + id;
+        return this.http.get(url).map(function (response) { return response.json(); });
+    };
+    CategorieService.prototype.updateActeur = function (categorie) {
+        var url = this.baseUrl + "categorie/update/";
+        var body = JSON.stringify(categorie);
+        return this.http.post(url, body, this.options).map(function (response) { return response.json(); });
+    };
+    CategorieService.prototype.addACatgorie = function (categorie) {
+        var url = this.baseUrl + "categorie/save/";
+        var body = JSON.stringify(categorie);
+        return this.http.post(url, body, this.options).map(function (response) { return response.json(); });
+    };
+    CategorieService.prototype.deleteCategorie = function (id) {
+        var url = this.baseUrl + "categorie/delete?noCat=" + id;
+        return this.http.get(url).map(function (response) { return response.json(); });
     };
     return CategorieService;
 }(main_service_1.MainService));

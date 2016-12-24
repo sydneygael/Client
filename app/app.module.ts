@@ -30,6 +30,7 @@ const appRoutes: Routes = [
             { path: 'acteurs/add', component: ActeurAddComponent },
             { path: 'acteurs/see/:id', component: ActeurViewComponent },
             { path: 'films',component: FilmsComponent },
+
             { path: 'personnages',component: PersonnagesComponent },
             { path: 'categories',component: ActeursComponent },
 			{ path: 'realisateurs', component: RealisateursComponent }

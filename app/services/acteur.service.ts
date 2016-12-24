@@ -17,7 +17,7 @@ export class ActeurService extends MainService {
     }
 
     getActeur(id: number): Observable<Acteur> {
-        var url = this.baseUrl + "/get/" + id;
+        var url = this.baseUrl + "acteur/getbyid?noAct=" + id;
         return this.http.get(url).map(response => <Acteur> response.json());
     }
 
@@ -34,7 +34,7 @@ export class ActeurService extends MainService {
     }
 
     deleteActeur(id: number): Observable<Acteur> {
-        var url = this.baseUrl + "acteur/delete/" + id;
+        var url = this.baseUrl + "acteur/delete?noAct=" + id;
         return this.http.get(url).map(response => <Acteur> response.json());
     }
 }
