@@ -19,19 +19,18 @@ var ActeursComponent = (function () {
         this.acteurService.getActeurs()
             .subscribe(function (data) { return _this.acteurs = data; }, function (error) { return _this.errorMessage = error.status + " est le statuts d'error"; });
     };
-    ActeursComponent.prototype.editActor = function (acteur) {
+    ActeursComponent.prototype.selectActor = function (acteur) {
         this.acteurSelect = acteur;
-    };
-    ActeursComponent.prototype.ngOnInit = function () {
-        this.loadActeurs();
     };
     ActeursComponent.prototype.deleteSelectedActor = function () {
         var _this = this;
         this.acteurService.deleteActeur(this.acteurSelect.noAct)
             .subscribe(function (acteurSelect) {
-            // toastr.success("l'acteur " + acteurSelect.nomAct + " supprimé");
             _this.loadActeurs();
         });
+    };
+    ActeursComponent.prototype.ngOnInit = function () {
+        this.loadActeurs();
     };
     return ActeursComponent;
 }());

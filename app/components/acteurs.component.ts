@@ -23,20 +23,19 @@ export class ActeursComponent  implements OnInit {
 			);
     }
 
-    editActor(acteur:Acteur){ // to emit
+    selectActor(acteur:Acteur){ // to emit
         this.acteurSelect=acteur;
-    }
-	
-	ngOnInit(): void{
-            this.loadActeurs();
     }
 
     deleteSelectedActor(): void {
         this.acteurService.deleteActeur(this.acteurSelect.noAct)
             .subscribe(
                 acteurSelect => {
-                   // toastr.success("l'acteur " + acteurSelect.nomAct + " supprimé");
                     this.loadActeurs();
                 });
+    }
+	
+	ngOnInit(): void{
+            this.loadActeurs();
     }
 }

@@ -19,12 +19,11 @@ var main_service_1 = require("./main.service");
 var ActeurService = (function (_super) {
     __extends(ActeurService, _super);
     function ActeurService(http) {
-        var _this = _super.call(this, http) || this;
-        _this.baseUrl = _this.baseUrl + "acteur/getall";
-        return _this;
+        return _super.call(this, http) || this;
     }
     ActeurService.prototype.getActeurs = function () {
-        return this.http.get(this.baseUrl).map(function (response) { return response.json(); });
+        var url = this.baseUrl + "acteur/getall";
+        return this.http.get(url).map(function (response) { return response.json(); });
     };
     ActeurService.prototype.getActeur = function (id) {
         var url = this.baseUrl + "/get/" + id;
@@ -36,7 +35,7 @@ var ActeurService = (function (_super) {
         return this.http.post(url, body, this.options).map(function (response) { return response.json(); });
     };
     ActeurService.prototype.addActeur = function (acteur) {
-        var url = this.baseUrl + "acteur/add/";
+        var url = this.baseUrl + "acteur/save/";
         var body = JSON.stringify(acteur);
         return this.http.post(url, body, this.options).map(function (response) { return response.json(); });
     };

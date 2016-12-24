@@ -28,7 +28,7 @@ const appRoutes: Routes = [
             { path: '',component: IndexComponent },
 			{ path: 'acteurs',component: ActeursComponent },
             { path: 'acteurs/add', component: ActeurAddComponent },
-            //{ path: 'acteurs/see/:id', component: ActeurViewComponent },
+            { path: 'acteurs/see/:id', component: ActeurViewComponent },
             { path: 'films',component: FilmsComponent },
             { path: 'personnages',component: PersonnagesComponent },
             { path: 'categories',component: ActeursComponent },
@@ -53,7 +53,8 @@ const appRoutes: Routes = [
     PersonnagesComponent,
     RealisateursComponent,
     ActeurFormComponent,
-      ActeurAddComponent
+      ActeurAddComponent,
+      ActeurViewComponent
   ],
   providers: [
     MainService,
