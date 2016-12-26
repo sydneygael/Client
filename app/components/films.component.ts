@@ -10,12 +10,15 @@ import { FilmService } from '../services/film.service';
 export class FilmsComponent implements OnInit {
     films: Film[];
     filmSelected : Film;
+    errorMessage: string;
 
     constructor(private filmService: FilmService) { }
 
     loadFilms(): void {
         this.filmService.getFilms()
-            .subscribe(data => this.films = data);
+            .subscribe(data => this.films = data,
+                error => this.errorMessage = error.status + " est le statuts d'error"
+            );
     }
 
     ngOnInit() {
