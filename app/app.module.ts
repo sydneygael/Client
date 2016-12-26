@@ -54,8 +54,8 @@ const appRoutes: Routes = [
     IndexComponent,
     ActeursComponent,
     CategoriesComponent,
-      FilmFormComponent, FilmsComponent, FilmViewComponent,
-      FilmAddComponent,
+    FilmFormComponent, FilmsComponent, FilmViewComponent,
+    FilmAddComponent,
     PersonnagesComponent,
     RealisateursComponent,
     ActeurFormComponent, ActeurAddComponent, ActeurViewComponent
