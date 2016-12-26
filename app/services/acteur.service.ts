@@ -28,9 +28,20 @@ export class ActeurService extends MainService {
     }
 
     addActeur(acteur: Acteur): Observable<Acteur> {
-        var url = this.baseUrl + "acteur/save/";
-        var body = JSON.stringify(acteur);
-        return this.http.post(url, body, this.options).map(response => <Acteur> response.json());
+        //localhost:8080/acteur/save?nomAct=syl&prenAct=Beg&dateNaiss=2000-01-01&dateDeces=2000-01-02
+        if (acteur.dateDeces==null) {
+            var url = this.baseUrl + "acteur/save?nomAct=" + acteur.nomAct +
+                "&prenAct=" + acteur.prenAct
+                + "&dateNaiss=" + acteur.dateNaiss;
+            return this.http.post(url).map(response => <Acteur> response.json());
+        }
+        else {
+            var url = this.baseUrl + "acteur/save?nomAct=" + acteur.nomAct +
+                "&prenAct=" + acteur.prenAct
+                + "&dateNaiss=" + acteur.dateNaiss
+                + "&dateDeces=" + acteur.dateDeces;
+            return this.http.post(url).map(response => <Acteur> response.json());
+        }
     }
 
     deleteActeur(id: number): Observable<Acteur> {
