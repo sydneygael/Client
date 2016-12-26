@@ -30,6 +30,9 @@ var realisateur_service_1 = require("./services/realisateur.service");
 var emitter_service_1 = require("./services/emitter.service");
 var acteuradd_component_1 = require("./components/acteuradd.component");
 var acteur_component_1 = require("./components/acteur.component");
+var filmadd_component_1 = require("./components/filmadd.component");
+var filmform_component_1 = require("./components/filmform.component");
+var film_component_1 = require("./components/film.component");
 var appRoutes = [
     { path: 'index', component: index_component_1.IndexComponent },
     { path: '', component: index_component_1.IndexComponent },
@@ -37,8 +40,10 @@ var appRoutes = [
     { path: 'acteurs/add', component: acteuradd_component_1.ActeurAddComponent },
     { path: 'acteurs/see/:id', component: acteur_component_1.ActeurViewComponent },
     { path: 'films', component: films_component_1.FilmsComponent },
+    { path: 'films/see/:id', component: film_component_1.FilmViewComponent },
+    { path: 'films/add', component: filmadd_component_1.FilmAddComponent },
     { path: 'personnages', component: personnages_component_1.PersonnagesComponent },
-    { path: 'categories', component: acteurs_component_1.ActeursComponent },
+    { path: 'categories', component: categories_component_1.CategoriesComponent },
     { path: 'realisateurs', component: realisateurs_component_1.RealisateursComponent }
 ];
 var AppModule = (function () {
@@ -61,12 +66,11 @@ AppModule = __decorate([
             index_component_1.IndexComponent,
             acteurs_component_1.ActeursComponent,
             categories_component_1.CategoriesComponent,
-            films_component_1.FilmsComponent,
+            filmform_component_1.FilmFormComponent, films_component_1.FilmsComponent, film_component_1.FilmViewComponent,
+            filmadd_component_1.FilmAddComponent,
             personnages_component_1.PersonnagesComponent,
             realisateurs_component_1.RealisateursComponent,
-            acteurform_component_1.ActeurFormComponent,
-            acteuradd_component_1.ActeurAddComponent,
-            acteur_component_1.ActeurViewComponent
+            acteurform_component_1.ActeurFormComponent, acteuradd_component_1.ActeurAddComponent, acteur_component_1.ActeurViewComponent
         ],
         providers: [
             main_service_1.MainService,

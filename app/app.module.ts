@@ -22,6 +22,9 @@ import { RealisateurService } from './services/realisateur.service';
 import { EmitterService } from './services/emitter.service';
 import {ActeurAddComponent} from "./components/acteuradd.component";
 import {ActeurViewComponent} from "./components/acteur.component";
+import {FilmAddComponent} from "./components/filmadd.component";
+import {FilmFormComponent} from "./components/filmform.component";
+import {FilmViewComponent} from "./components/film.component";
 
 const appRoutes: Routes = [
             { path: 'index',component: IndexComponent },
@@ -30,9 +33,10 @@ const appRoutes: Routes = [
             { path: 'acteurs/add', component: ActeurAddComponent },
             { path: 'acteurs/see/:id', component: ActeurViewComponent },
             { path: 'films',component: FilmsComponent },
-
+            { path: 'films/see/:id', component: FilmViewComponent },
+            { path: 'films/add', component: FilmAddComponent },
             { path: 'personnages',component: PersonnagesComponent },
-            { path: 'categories',component: ActeursComponent },
+            { path: 'categories',component: CategoriesComponent },
 			{ path: 'realisateurs', component: RealisateursComponent }
         ];
 
@@ -50,12 +54,11 @@ const appRoutes: Routes = [
     IndexComponent,
     ActeursComponent,
     CategoriesComponent,
-    FilmsComponent,
+      FilmFormComponent, FilmsComponent, FilmViewComponent,
+      FilmAddComponent,
     PersonnagesComponent,
     RealisateursComponent,
-    ActeurFormComponent,
-      ActeurAddComponent,
-      ActeurViewComponent
+    ActeurFormComponent, ActeurAddComponent, ActeurViewComponent
   ],
   providers: [
     MainService,

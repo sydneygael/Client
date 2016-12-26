@@ -23,7 +23,7 @@ export class FilmFormComponent implements OnInit {
         private categorieService: CategorieService,
         private realisateurService: RealisateurService,
         private location: Location
-    ) { }
+    ) {}
 
     ngOnInit() {
         this.categorieService.getCategories()
@@ -36,7 +36,8 @@ export class FilmFormComponent implements OnInit {
     onSubmit() {
         this.film.noFilm = Math.floor(Math.random() * 1000) + Math.floor(Math.random() * 1000);
         this.filmService.addFilm(this.film)
-            .subscribe(this.location.back());
+            .subscribe( film => this.goBack() );
+
     }
 
     goBack() {

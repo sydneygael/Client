@@ -22,6 +22,14 @@ var FilmsComponent = (function () {
     FilmsComponent.prototype.ngOnInit = function () {
         this.loadFilms();
     };
+    FilmsComponent.prototype.selectFilm = function (film) {
+        this.filmSelected = film;
+    };
+    FilmsComponent.prototype.deleteFilm = function () {
+        var _this = this;
+        this.filmService.deleteFilm(this.filmSelected.noFilm)
+            .subscribe(function (film) { _this.loadFilms(); });
+    };
     return FilmsComponent;
 }());
 FilmsComponent = __decorate([

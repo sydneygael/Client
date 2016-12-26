@@ -14,15 +14,12 @@ export class ActeurFormComponent {
     constructor(
         private acteurService: ActeurService,
         private location: Location
-    ) {this.acteur = new Acteur(); }
+    ) {}
 
     onSubmit(): void {
         this.acteur.noAct = Math.floor(Math.random() * 1000) + Math.floor(Math.random() * 1000);
         this.acteurService.addActeur(this.acteur)
-            .subscribe(acteur => {
-               // toastr.success("Acteur ajouté");
-                this.location.back();
-            });
+            .subscribe(acteur => {this.goBack()});
     }
 
     goBack(): void {

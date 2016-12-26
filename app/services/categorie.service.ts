@@ -33,8 +33,8 @@ export class CategorieService extends MainService {
         return this.http.post(url, body, this.options).map(response => <Categorie> response.json());
     }
 
-    deleteCategorie(id: number): Observable<Acteur> {
+    deleteCategorie(id: number): Observable<Categorie> {
         var url = this.baseUrl + "categorie/delete?noCat=" + id;
-        return this.http.get(url).map(response => <Acteur> response.json());
+        return this.http.get(url).map(response => <Categorie> response.json());
     }
 }
