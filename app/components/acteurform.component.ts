@@ -1,4 +1,5 @@
-import {Component} from "@angular/core";
+///<reference path="../../node_modules/@angular/core/src/metadata/lifecycle_hooks.d.ts"/>
+import {Component, OnInit} from "@angular/core";
 import { Acteur } from '../model/acteur';
 import { Location } from '@angular/common';
 import {ActeurService} from "../services/acteur.service";
@@ -8,7 +9,7 @@ import {ActeurService} from "../services/acteur.service";
     templateUrl: 'app/templates/acteurform.component.html'
 })
 
-export class ActeurFormComponent {
+export class ActeurFormComponent implements OnInit {
     private acteur : Acteur;
 
     constructor(
@@ -17,9 +18,12 @@ export class ActeurFormComponent {
     ) {}
 
     onSubmit(): void {
-        this.acteur.noAct = Math.floor(Math.random() * 1000) + Math.floor(Math.random() * 1000);
         this.acteurService.addActeur(this.acteur)
             .subscribe(acteur => {this.goBack()});
+    }
+
+    ngOnInit() : void {
+        this.acteur = new Acteur ();
     }
 
     goBack(): void {
