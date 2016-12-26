@@ -12,12 +12,12 @@ export class CategoriesComponent implements OnInit {
 
     constructor(private categorieService: CategorieService) { }
 
-    getCategories() {
+    loadCategories() {
         this.categorieService.getCategories()
-            .subscribe(categories => this.categories = categories);
+            .subscribe(data => this.categories = data);
     }
 
     ngOnInit() {
-        this.getCategories();
+        this.loadCategories();
      }
 }
