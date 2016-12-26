@@ -29,7 +29,7 @@ import {FilmViewComponent} from "./components/film.component";
 const appRoutes: Routes = [
             { path: 'index',component: IndexComponent },
             { path: '',component: IndexComponent },
-			{ path: 'acteurs',component: ActeursComponent },
+	    { path: 'acteurs',component: ActeursComponent },
             { path: 'acteurs/add', component: ActeurAddComponent },
             { path: 'acteurs/see/:id', component: ActeurViewComponent },
             { path: 'films',component: FilmsComponent },
@@ -37,7 +37,7 @@ const appRoutes: Routes = [
             { path: 'films/add', component: FilmAddComponent },
             { path: 'personnages',component: PersonnagesComponent },
             { path: 'categories',component: CategoriesComponent },
-			{ path: 'realisateurs', component: RealisateursComponent }
+	    { path: 'realisateurs', component: RealisateursComponent }
         ];
 
 @NgModule({
