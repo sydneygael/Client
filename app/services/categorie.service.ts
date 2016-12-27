@@ -13,7 +13,7 @@ export class CategorieService extends MainService {
 
     getCategories(): Observable<Categorie[]> {
         var url = this.baseUrl + "categorie/getall";
-        return this.http.get(url).map(response => <Categorie[]> response.json().categorie);
+        return this.http.get(url).map(response => <Categorie[]> response.json());
     }
 
     getCategorie(id: number): Observable<Categorie> {
@@ -21,7 +21,7 @@ export class CategorieService extends MainService {
         return this.http.get(url).map(response => <Categorie> response.json());
     }
 
-    updateActeur(categorie: Categorie): Observable<Categorie> {
+    updateCategorie(categorie: Categorie): Observable<Categorie> {
         var url = this.baseUrl + "categorie/update/";
         var body = JSON.stringify(categorie);
         return this.http.post(url, body, this.options).map(response => <Categorie> response.json());

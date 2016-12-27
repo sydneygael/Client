@@ -9,15 +9,17 @@ import { RealisateurService } from '../services/realisateur.service';
 })
 export class RealisateursComponent implements OnInit {
     realisateurs: Realisateur[];
+    errorMessage: string;
 
     constructor(private realisateurService: RealisateurService) { }
 
-    getRealisateurs() {
+    loadRealisateurs() {
         this.realisateurService.getRealisateurs()
-        .subscribe(realisateurs => this.realisateurs = realisateurs);
+        .subscribe(data => this.realisateurs = data,
+        error => this.errorMessage = error.status + " est le statuts d'error");
     }
 
     ngOnInit() {
-        this.getRealisateurs();
+        this.loadRealisateurs();
      }
 }

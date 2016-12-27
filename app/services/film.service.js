@@ -25,7 +25,7 @@ var FilmService = (function (_super) {
     }
     FilmService.prototype.getFilms = function () {
         var url = this.baseUrl + "film/getall";
-        return this.http.get(url).map(function (response) { return response.json().film; });
+        return this.http.get(url).map(function (response) { return response.json(); });
     };
     FilmService.prototype.getFilm = function (id) {
         var url = this.baseUrl + "film/getbyid?noFilm=" + id;

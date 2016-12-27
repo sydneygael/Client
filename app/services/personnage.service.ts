@@ -9,10 +9,15 @@ export class PersonnageService extends MainService {
 
     constructor(http: Http) {
         super(http);
-        this.baseUrl= this.baseUrl+ "personnages";
     }
 
     getPersonnages(): Observable<Personnage[]> {
-        return this.http.get(this.baseUrl).map(response => <Personnage[]> response.json().personnage);
+        var url = this.baseUrl+ "/personnage/getall";
+        return this.http.get(url).map(response => <Personnage[]> response.json());
+    }
+
+    getPersonnageByActor(id: number): Observable<Personnage> {
+        var url = this.baseUrl + "personnage/getPersonnageByActeur?noAct=" + id;
+        return this.http.get(url).map(response => <Personnage> response.json());
     }
 }

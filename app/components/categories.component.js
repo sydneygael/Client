@@ -14,13 +14,13 @@ var CategoriesComponent = (function () {
     function CategoriesComponent(categorieService) {
         this.categorieService = categorieService;
     }
-    CategoriesComponent.prototype.getCategories = function () {
+    CategoriesComponent.prototype.loadCategories = function () {
         var _this = this;
         this.categorieService.getCategories()
-            .subscribe(function (categories) { return _this.categories = categories; });
+            .subscribe(function (data) { return _this.categories = data; });
     };
     CategoriesComponent.prototype.ngOnInit = function () {
-        this.getCategories();
+        this.loadCategories();
     };
     return CategoriesComponent;
 }());

@@ -14,7 +14,7 @@ export class FilmService extends MainService {
     
     getFilms(): Observable<Film[]> {
         var url = this.baseUrl + "film/getall";
-        return this.http.get(url).map(response => <Film[]> response.json().film);
+        return this.http.get(url).map(response => <Film[]> response.json());
     }
 
     getFilm(id: number): Observable<Film> {

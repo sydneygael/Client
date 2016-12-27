@@ -23,13 +23,13 @@ var CategorieService = (function (_super) {
     }
     CategorieService.prototype.getCategories = function () {
         var url = this.baseUrl + "categorie/getall";
-        return this.http.get(url).map(function (response) { return response.json().categorie; });
+        return this.http.get(url).map(function (response) { return response.json(); });
     };
     CategorieService.prototype.getCategorie = function (id) {
         var url = this.baseUrl + "categorie/getbyid?noCat=" + id;
         return this.http.get(url).map(function (response) { return response.json(); });
     };
-    CategorieService.prototype.updateActeur = function (categorie) {
+    CategorieService.prototype.updateCategorie = function (categorie) {
         var url = this.baseUrl + "categorie/update/";
         var body = JSON.stringify(categorie);
         return this.http.post(url, body, this.options).map(function (response) { return response.json(); });

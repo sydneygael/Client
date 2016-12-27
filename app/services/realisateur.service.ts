@@ -9,10 +9,10 @@ export class RealisateurService extends MainService {
 
     constructor(http: Http) {
         super(http);
-        this.baseUrl = this.baseUrl + "realisateurs";
+        this.baseUrl = this.baseUrl + "realisateur/getall";
     }
 
     getRealisateurs(): Observable<Realisateur[]> {
-        return this.http.get(this.baseUrl).map(response => <Realisateur[]> response.json().realisateur);
+        return this.http.get(this.baseUrl).map(response => <Realisateur[]> response.json());
     }
 }

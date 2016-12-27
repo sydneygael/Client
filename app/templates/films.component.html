@@ -10,16 +10,16 @@
         <th>Durée</th>
         <th>
             <a type="button" class="btn btn-primary" [routerLink]="['add']">
-                Ajouter <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                Nouveau film <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
             </a>
         </th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let film of films">
-        <td><a [routerLink]="['see',film.noFilm]">{{film.titre}}</a></td>
-        <td>{{film.categorie.libelleCat}}</td>
-        <td>{{film.realisateur.nomRea}}</td>
+        <td>{{film.titre}}</td>
+        <td ng-if="getCategorie(film.codeCat)">{{getCategorie(film.codeCat)}}</td>
+        <td ng-if="getRealisateur(film.noRea)"> {{getRealisateur(film.noRea)}}</td>
         <td>{{film.dateSortie}}</td>
         <td>{{film.duree}}</td>
         <td>
@@ -33,6 +33,8 @@
     </tr>
     </tbody>
 </table>
+
+    <h1 ng-if="errorMessage">{{errorMessage}}</h1>
 
 <div class="modal fade" id="confirmation">
     <div class="modal-dialog">

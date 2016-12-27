@@ -20,11 +20,11 @@ var RealisateurService = (function (_super) {
     __extends(RealisateurService, _super);
     function RealisateurService(http) {
         var _this = _super.call(this, http) || this;
-        _this.baseUrl = _this.baseUrl + "realisateurs";
+        _this.baseUrl = _this.baseUrl + "realisateur/getall";
         return _this;
     }
     RealisateurService.prototype.getRealisateurs = function () {
-        return this.http.get(this.baseUrl).map(function (response) { return response.json().realisateur; });
+        return this.http.get(this.baseUrl).map(function (response) { return response.json(); });
     };
     return RealisateurService;
 }(main_service_1.MainService));

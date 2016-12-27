@@ -26,6 +26,7 @@ export class FilmFormComponent implements OnInit {
     ) {}
 
     ngOnInit() {
+        this.film = new Film();
         this.categorieService.getCategories()
             .subscribe(categories => this.categories = categories);
 

@@ -12,12 +12,12 @@ export class PersonnagesComponent implements OnInit {
 
     constructor(private personnageService: PersonnageService) { }
 
-    getPersonnages() {
+    laodPersonnages() {
         this.personnageService.getPersonnages()
-        .subscribe(personnages => this.personnages = personnages);
+        .subscribe(data => this.personnages = data);
     }
 
     ngOnInit() {
-        this.getPersonnages();
+        this.laodPersonnages();
      }
 }

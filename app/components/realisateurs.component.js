@@ -14,13 +14,13 @@ var RealisateursComponent = (function () {
     function RealisateursComponent(realisateurService) {
         this.realisateurService = realisateurService;
     }
-    RealisateursComponent.prototype.getRealisateurs = function () {
+    RealisateursComponent.prototype.loadRealisateurs = function () {
         var _this = this;
         this.realisateurService.getRealisateurs()
-            .subscribe(function (realisateurs) { return _this.realisateurs = realisateurs; });
+            .subscribe(function (data) { return _this.realisateurs = data; }, function (error) { return _this.errorMessage = error.status + " est le statuts d'error"; });
     };
     RealisateursComponent.prototype.ngOnInit = function () {
-        this.getRealisateurs();
+        this.loadRealisateurs();
     };
     return RealisateursComponent;
 }());

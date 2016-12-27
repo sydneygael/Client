@@ -19,12 +19,15 @@ var main_service_1 = require("./main.service");
 var PersonnageService = (function (_super) {
     __extends(PersonnageService, _super);
     function PersonnageService(http) {
-        var _this = _super.call(this, http) || this;
-        _this.baseUrl = _this.baseUrl + "personnages";
-        return _this;
+        return _super.call(this, http) || this;
     }
     PersonnageService.prototype.getPersonnages = function () {
-        return this.http.get(this.baseUrl).map(function (response) { return response.json().personnage; });
+        var url = this.baseUrl + "/personnage/getall";
+        return this.http.get(url).map(function (response) { return response.json(); });
+    };
+    PersonnageService.prototype.getPersonnageByActor = function (id) {
+        var url = this.baseUrl + "personnage/getPersonnageByActeur?noAct=" + id;
+        return this.http.get(url).map(function (response) { return response.json(); });
     };
     return PersonnageService;
 }(main_service_1.MainService));

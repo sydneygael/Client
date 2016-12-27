@@ -14,13 +14,13 @@ var PersonnagesComponent = (function () {
     function PersonnagesComponent(personnageService) {
         this.personnageService = personnageService;
     }
-    PersonnagesComponent.prototype.getPersonnages = function () {
+    PersonnagesComponent.prototype.laodPersonnages = function () {
         var _this = this;
         this.personnageService.getPersonnages()
-            .subscribe(function (personnages) { return _this.personnages = personnages; });
+            .subscribe(function (data) { return _this.personnages = data; });
     };
     PersonnagesComponent.prototype.ngOnInit = function () {
-        this.getPersonnages();
+        this.laodPersonnages();
     };
     return PersonnagesComponent;
 }());
