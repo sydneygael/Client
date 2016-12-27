@@ -47,8 +47,6 @@ export class FilmViewComponent implements OnInit {
     }
 
     save(): void {
-        this.film.realisateur = this.realisateurs.find(realisateur => realisateur.noRea == this.film.realisateur.noRea);
-        this.film.categorie = this.categories.find(categorie => categorie.codeCat == this.film.categorie.codeCat);
         this.filmService.updateFilm(this.film)
             .subscribe(film => {
                 this.film = film;

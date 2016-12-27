@@ -23,9 +23,16 @@ export class FilmService extends MainService {
     }
 
     updateFilm(film: Film): Observable<Film> {
-        var url = this.baseUrl + "film/update/";
-        var body = JSON.stringify(film);
-        return this.http.post(url, body, this.options).map(response => <Film> response.json());
+        var url = this.baseUrl + "film/update?"
+            +"noFilm="+film.noFilm
+            +"&titre="+film.titre
+            +"&duree="+film.duree
+            +"&dateSortie="+film.dateSortie
+            +"&budget="+film.budget
+            +"&montantRecette="+film.montantRecette
+            +"&noRea="+film.noRea
+            +"&codeCat="+film.codeCat;
+        return this.http.post(url).map(response => <Film> response.json());
     }
 
     addFilm(film: Film): Observable<Film> {

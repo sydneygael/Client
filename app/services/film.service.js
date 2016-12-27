@@ -32,9 +32,16 @@ var FilmService = (function (_super) {
         return this.http.get(url).map(function (response) { return response.json(); });
     };
     FilmService.prototype.updateFilm = function (film) {
-        var url = this.baseUrl + "film/update/";
-        var body = JSON.stringify(film);
-        return this.http.post(url, body, this.options).map(function (response) { return response.json(); });
+        var url = this.baseUrl + "film/update?"
+            + "noFilm=" + film.noFilm
+            + "&titre=" + film.titre
+            + "&duree=" + film.duree
+            + "&dateSortie=" + film.dateSortie
+            + "&budget=" + film.budget
+            + "&montantRecette=" + film.montantRecette
+            + "&noRea=" + film.noRea
+            + "&codeCat=" + film.codeCat;
+        return this.http.post(url).map(function (response) { return response.json(); });
     };
     FilmService.prototype.addFilm = function (film) {
         var url = this.baseUrl + "film/save/";

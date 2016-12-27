@@ -9,7 +9,7 @@
 
     <div class="form-group">
         <label for="categorie">Categorie</label>
-        <select id="categorie" class="form-control" [(ngModel)]="film.categorie.codeCat" name="categorie" required>
+        <select id="categorie" class="form-control" [(ngModel)]="film.codeCat" name="categorie" required>
             <option *ngFor="let categorie of categories" [ngValue]="categorie.codeCat">
                 {{categorie.libelleCat}}
             </option>
@@ -18,7 +18,7 @@
 
     <div class="form-group">
         <label for="realisateur">Réalisateur</label>
-        <select id="realisateur" class="form-control" [(ngModel)]="film.realisateur.noRea" name="realisateur" required>
+        <select id="realisateur" class="form-control" [(ngModel)]="film.noRea" name="realisateur" required>
             <option *ngFor="let realisateur of realisateurs" [ngValue]="realisateur.noRea">
                 {{realisateur.nomRea}} {{realisateur.prenRea}}
             </option>
