@@ -68,7 +68,6 @@ export class FilmsComponent implements OnInit {
                 return categorie.libelleCat;
             }
         }
-
         return "non trouvée";
     }
 

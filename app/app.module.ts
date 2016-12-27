@@ -25,6 +25,8 @@ import {ActeurViewComponent} from "./components/acteur.component";
 import {FilmAddComponent} from "./components/filmadd.component";
 import {FilmFormComponent} from "./components/filmform.component";
 import {FilmViewComponent} from "./components/film.component";
+import {JoueComponent} from "./components/joue.component";
+import {PersonnageFormComponent} from "./components/personnageform.component";
 
 const appRoutes: Routes = [
             { path: 'index',component: IndexComponent },
@@ -36,8 +38,9 @@ const appRoutes: Routes = [
             { path: 'films/see/:id', component: FilmViewComponent },
             { path: 'films/add', component: FilmAddComponent },
             { path: 'personnages',component: PersonnagesComponent },
+            { path: 'personnages/add',component: JoueComponent },
             { path: 'categories',component: CategoriesComponent },
-	    { path: 'realisateurs', component: RealisateursComponent }
+	        { path: 'realisateurs', component: RealisateursComponent }
         ];
 
 @NgModule({
@@ -56,7 +59,7 @@ const appRoutes: Routes = [
     CategoriesComponent,
     FilmFormComponent, FilmsComponent, FilmViewComponent,
     FilmAddComponent,
-    PersonnagesComponent,
+    PersonnagesComponent,PersonnageFormComponent,JoueComponent,
     RealisateursComponent,
     ActeurFormComponent, ActeurAddComponent, ActeurViewComponent
   ],

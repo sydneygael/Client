@@ -33,6 +33,8 @@ var acteur_component_1 = require("./components/acteur.component");
 var filmadd_component_1 = require("./components/filmadd.component");
 var filmform_component_1 = require("./components/filmform.component");
 var film_component_1 = require("./components/film.component");
+var joue_component_1 = require("./components/joue.component");
+var personnageform_component_1 = require("./components/personnageform.component");
 var appRoutes = [
     { path: 'index', component: index_component_1.IndexComponent },
     { path: '', component: index_component_1.IndexComponent },
@@ -43,6 +45,7 @@ var appRoutes = [
     { path: 'films/see/:id', component: film_component_1.FilmViewComponent },
     { path: 'films/add', component: filmadd_component_1.FilmAddComponent },
     { path: 'personnages', component: personnages_component_1.PersonnagesComponent },
+    { path: 'personnages/add', component: joue_component_1.JoueComponent },
     { path: 'categories', component: categories_component_1.CategoriesComponent },
     { path: 'realisateurs', component: realisateurs_component_1.RealisateursComponent }
 ];
@@ -68,7 +71,7 @@ AppModule = __decorate([
             categories_component_1.CategoriesComponent,
             filmform_component_1.FilmFormComponent, films_component_1.FilmsComponent, film_component_1.FilmViewComponent,
             filmadd_component_1.FilmAddComponent,
-            personnages_component_1.PersonnagesComponent,
+            personnages_component_1.PersonnagesComponent, personnageform_component_1.PersonnageFormComponent, joue_component_1.JoueComponent,
             realisateurs_component_1.RealisateursComponent,
             acteurform_component_1.ActeurFormComponent, acteuradd_component_1.ActeurAddComponent, acteur_component_1.ActeurViewComponent
         ],
