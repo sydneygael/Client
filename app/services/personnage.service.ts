@@ -20,4 +20,10 @@ export class PersonnageService extends MainService {
         var url = this.baseUrl + "personnage/getPersonnageByActeur?noAct=" + id;
         return this.http.get(url).map(response => <Personnage> response.json());
     }
+
+    addPersonnage(personnage: Personnage) : Observable<Personnage> {
+        var url = this.baseUrl + "personnage/save?noAct="+personnage.noAct
+            +"&noFilm="+personnage.noFilm+"&nomPers="+personnage.nomPers;
+        return this.http.post(url).map(response => <Personnage> response.json());
+    }
 }

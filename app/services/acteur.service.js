@@ -30,9 +30,21 @@ var ActeurService = (function (_super) {
         return this.http.get(url).map(function (response) { return response.json(); });
     };
     ActeurService.prototype.updateActeur = function (acteur) {
-        var url = this.baseUrl + "acteur/update/";
-        var body = JSON.stringify(acteur);
-        return this.http.post(url, body, this.options).map(function (response) { return response.json(); });
+        if (acteur.dateDeces == "") {
+            var url = this.baseUrl + "acteur/update?noAct=" + acteur.noAct
+                + "nomAct=" + acteur.nomAct
+                + "&prenAct=" + acteur.prenAct
+                + "&dateNaiss=" + acteur.dateNaiss;
+            return this.http.post(url).map(function (response) { return response.json(); });
+        }
+        else {
+            var url = this.baseUrl + "acteur/update?noAct=" + acteur.noAct
+                + "&nomAct=" + acteur.nomAct
+                + "&prenAct=" + acteur.prenAct
+                + "&dateNaiss=" + acteur.dateNaiss
+                + "&dateDeces=" + acteur.dateDeces;
+            return this.http.post(url).map(function (response) { return response.json(); });
+        }
     };
     ActeurService.prototype.addActeur = function (acteur) {
         //localhost:8080/acteur/save?nomAct=syl&prenAct=Beg&dateNaiss=2000-01-01&dateDeces=2000-01-02

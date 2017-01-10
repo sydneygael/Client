@@ -28,6 +28,7 @@ export class PersonnageFormComponent implements OnInit {
 
     ngOnInit(): void {
         this.personnage = new Personnage ();
+
         this.filmService.getFilms()
             .subscribe(films => this.films = films);
 

@@ -44,9 +44,16 @@ var FilmService = (function (_super) {
         return this.http.post(url).map(function (response) { return response.json(); });
     };
     FilmService.prototype.addFilm = function (film) {
-        var url = this.baseUrl + "film/save/";
-        var body = JSON.stringify(film);
-        return this.http.post(url, body, this.options).map(function (response) { return response.json(); });
+        var url = this.baseUrl + "film/save?"
+            + "noFilm=" + film.noFilm
+            + "&titre=" + film.titre
+            + "&duree=" + film.duree
+            + "&dateSortie=" + film.dateSortie
+            + "&budget=" + film.budget
+            + "&montantRecette=" + film.montantRecette
+            + "&noRea=" + film.noRea
+            + "&codeCat=" + film.codeCat;
+        return this.http.post(url).map(function (response) { return response.json(); });
     };
     FilmService.prototype.deleteFilm = function (id) {
         var url = this.baseUrl + "film/delete?noFilm=" + id;

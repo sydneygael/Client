@@ -61,7 +61,7 @@ var FilmsComponent = (function () {
     };
     FilmsComponent.prototype.deleteFilm = function () {
         var _this = this;
-        this.filmService.deleteFilm(this.filmSelected.noFilm)
+        this.filmService.deleteFilm(this.filmSelected)
             .subscribe(function (data) { return _this.films = data; }, function (error) { return _this.errorMessage = error.status + " est le statuts d'error"; });
     };
     return FilmsComponent;

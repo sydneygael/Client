@@ -72,7 +72,7 @@ export class FilmsComponent implements OnInit {
     }
 
     deleteFilm(): void {
-        this.filmService.deleteFilm(this.filmSelected.noFilm)
+        this.filmService.deleteFilm(this.filmSelected)
             .subscribe( data => this.films = data,
                 error => this.errorMessage = error.status + " est le statuts d'error"
             );

@@ -29,6 +29,11 @@ var PersonnageService = (function (_super) {
         var url = this.baseUrl + "personnage/getPersonnageByActeur?noAct=" + id;
         return this.http.get(url).map(function (response) { return response.json(); });
     };
+    PersonnageService.prototype.addPersonnage = function (personnage) {
+        var url = this.baseUrl + "personnage/save?noAct=" + personnage.noAct
+            + "&noFilm=" + personnage.noFilm + "&nomPers=" + personnage.nomPers;
+        return this.http.post(url).map(function (response) { return response.json(); });
+    };
     return PersonnageService;
 }(main_service_1.MainService));
 PersonnageService = __decorate([

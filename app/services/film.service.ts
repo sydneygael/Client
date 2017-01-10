@@ -36,9 +36,16 @@ export class FilmService extends MainService {
     }
 
     addFilm(film: Film): Observable<Film> {
-        var url = this.baseUrl + "film/save/";
-        var body = JSON.stringify(film);
-        return this.http.post(url, body, this.options).map(response => <Film> response.json());
+        var url = this.baseUrl + "film/save?"
+            +"noFilm="+film.noFilm
+            +"&titre="+film.titre
+            +"&duree="+film.duree
+            +"&dateSortie="+film.dateSortie
+            +"&budget="+film.budget
+            +"&montantRecette="+film.montantRecette
+            +"&noRea="+film.noRea
+            +"&codeCat="+film.codeCat;
+        return this.http.post(url).map(response => <Film> response.json());
     }
 
     deleteFilm(id: number): Observable<Film> {
